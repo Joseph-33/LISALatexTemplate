@@ -1,0 +1,132 @@
+\mode<presentation>
+
+\usecolortheme{default}
+\usecolortheme{default}
+\useinnertheme{circles}
+\useoutertheme{miniframes}
+
+% Colors
+\definecolor{lisablue}{RGB}{29,36,76}
+\setbeamercolor{normal text}{fg=white, bg=white}
+\setbeamercolor{frametitle}{fg=lisablue, bg=white}
+\setbeamercolor{section in toc}{fg=lisablue, bg=white}
+\setbeamercolor{title}{fg=lisablue, bg=white}
+\setbeamercolor{inverted normal text}{fg=white, bg=lisablue}
+\setbeamercolor{itemize item}{fg=lisablue}
+\setbeamercolor{itemize subitem}{fg=lisablue}
+\setbeamercolor{itemize subsubitem}{fg=lisablue}
+\setbeamercolor{enumerate item}{fg=lisablue}
+\setbeamercolor{enumerate subitem}{fg=lisablue}
+\setbeamercolor{caption name}{fg=lisablue}
+\setbeamercolor{block title}{fg=lisablue, bg=gray!30}
+\setbeamercolor{block body}{fg=lisablue, bg=gray!10}
+\setbeamercolor{block title alerted}{bg=gray!30}
+\setbeamercolor{block body alerted}{bg=gray!10}
+
+% Fonts
+\usepackage[scaled]{helvet}
+\renewcommand*\familydefault{\sfdefault}
+\usefonttheme{serif}
+\usepackage[T1]{fontenc}
+%\usepackage{tgbonum}
+
+
+% Title page
+\setbeamertemplate{title page}{
+
+    %\begin{center}
+	\vfill
+{ \Huge \textbf{\bfseries \inserttitle} }
+        \vfill
+        \insertauthor
+        \vfill
+        { \Large \insertsubtitle }
+	\vfill
+	\begin{columns}[T]
+		\begin{column}{.25 \textwidth}
+		%	\centering
+	\includegraphics[height=.2\textheight]{logos/Jena.jpg}
+\end{column}
+\begin{column}{.25 \textwidth}
+			\centering
+	\includegraphics[height=.2\textheight]{logos/lisa2-crop.png}
+\end{column}
+\begin{column}{.2 \textwidth}
+\end{column}
+	\end{columns}
+    %\end{center}
+}
+
+% Footline
+\setbeamerfont{footline}{size=\tiny}
+\setbeamertemplate{footline}{
+	\begin{beamercolorbox}[ht=16px, center]{inverted normal text}
+		\begin{columns}
+			\column{.001\textwidth}
+			\column{.15\textwidth}
+			\vspace{2px} % To lift logo from bottom
+			\includegraphics[height=34px]{logos/lisa-logo-small-white.png}  
+			\column{.49\textwidth}
+%			\vspace{-2px} % To lift logo from bottom
+			\lisanotice
+			\column{.02 \textwidth}
+			\vspace{6px} 
+\centering			\includegraphics[height = .14\paperheight]{images/lisa-bkground4.png}
+			\column{.12\textwidth}
+			\vspace{-5px}
+\centering		
+\talkdate
+			\column{.08\textwidth}
+			\vspace{-4px}
+			\insertpagenumber/\inserttotalframenumber
+		\end{columns}
+	\end{beamercolorbox}
+}
+
+
+\newcommand{\talkdate}{
+  \@ifundefined{mydate}
+	{
+	\today
+	}
+	{
+	\mydate
+	}
+}
+
+\newcommand{\lisanotice}{\noindent \color{lisablue}\\ This Marie Sklodowska-Curie Action (MSCA) Innovative Training  
+Networks (ITN) receives funding from the European Union’s H2020 
+Framework Programme under grant agreement no. 861198.}
+
+\newcommand{\lisaSplashBlue}{
+    % CERN blue splash page slide with white logo
+    \bgroup
+    \setbeamertemplate{navigation symbols}{}
+    \setbeamercolor{background canvas}{bg=lisablue}
+    \frame[plain]{
+        \hfill
+        \vspace{-1.5cm}
+        \includegraphics[scale=0.37]{logos/lisa-logo-white-on-blue.png}
+        \hfill\hfill
+    }
+    \egroup
+}
+
+\newcommand{\lisaSplashWhite}{
+    % CERN ending slide with blue logo and web page
+    \bgroup
+    \setbeamertemplate{navigation symbols}{}
+    \setbeamercolor{background canvas}{bg=white}
+    \frame[plain]{
+        \centering
+        \vspace{10px}
+        \begin{figure}
+            \includegraphics[scale=.61]{./logos/LogoBadge-01.png} \\
+            {\Large \textbf{www.lisa.ch}}
+        \end{figure}
+    }
+    \egroup
+}
+
+\mode
+<all>
