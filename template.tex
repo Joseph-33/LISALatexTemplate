@@ -11,33 +11,6 @@
 \usepackage{minted}
 
 \usetheme{LISA}
-\newcommand{\interludeTitle}{We are here!}
-\AtBeginSection[] {
-    \frame{
-	\frametitle{\interludeTitle}
-      \begin{multicols}{2}
-        \tableofcontents[
-            currentsection,
-            sectionstyle=show/shaded,
-            ]
-	  \end{multicols}
-    }
-}
-
-\AtBeginSubsection[] {
-	  \frame{
-		\frametitle{\interludeTitle}
-		\begin{multicols}{2}
-        \tableofcontents[
-            currentsubsection,
-            subsectionstyle=show/shaded,
-            ]
-		\end{multicols}
-	  }
-}
-
-
-% Talk date
 
 %%%%%%%%%%%%%%%%%%%%%%
 %  Author and title  %
@@ -45,7 +18,7 @@
 
 
 % Preamble
-\title[]{\bfseries \color{white} Investigating hyperfine constants of heavy atoms using MCDHF methods}
+\title[]{\bfseries \color{white} \textit{Ab initio} my title here}
 \subtitle{\color{white} LISA academic day}
 \author[Author]{\color{white} J. S. Andrews}
 
@@ -53,42 +26,21 @@
 % \def\mydate{20 Feb 2000}
 
 
-
-
-% Body
+\usebackgroundtemplate{   
+\includegraphics[width=\paperwidth,height=\paperheight]{logos/footer.png}
+}
 \begin{document}
-    
-%    \lisaSplashBlue
 
-    % Title
-    {
-    %\setbeamertemplate{A Title}{}
-	    \makeatletter % to change template
-	    \setbeamertemplate{headline}{
+{
+\setbeamertemplate{footline}{}
+\setbeamertemplate{headline}{}
+\usebackgroundtemplate{\includegraphics[height=\paperheight,width=\paperwidth]{logos/lisa_background.jpg}}
+\begin{frame}[plain]
+  \titlepage
+\end{frame}
+}
 
-\begin{columns}
-	\begin{beamercolorbox}[ht=33px]{background canvas}		
-	\end{beamercolorbox}
-\end{columns}
-
-
-
-	    }
-	    \def\beamer@entrycode{\vspace*{-\headheight}}
-	    \makeatother
-    \setbeamertemplate{navigation symbols}{}
-    \setbeamercolor{background canvas}{bg=lisablue}
-    \setbeamercolor{inverted normal text}{fg=lisablue, bg=white}
-    \setbeamertemplate{background}{
-	    \begin{columns}
-		    \column{.6\textwidth}
-		    \column{.2\textwidth}
-		    \vspace{99cm}\includegraphics[height=\paperheight]{logos/lisa-bkground2.png}
-	    \end{columns}
-    }
-     \frame{\titlepage}
-    }
-    \setcounter{framenumber}{0}
+%    \setcounter{framenumber}{0}
 
     %%%%%%%%%%%%%%%%%%%%%%%
     %  Table of contents  %
@@ -121,18 +73,6 @@
             \item Item 2
         \end{itemize}
     }
-
-	% This block includes a picture full slide
-	{ % all template changes are local to this group.
-		\setbeamertemplate{navigation symbols}{}
-		\begin{frame}[plain]
-			\begin{tikzpicture}[remember picture,overlay]
-			\node[at=(current page.center)] {
-				\includegraphics[width=\paperwidth]{images/image.png}
-			};
-			\end{tikzpicture}
-		\end{frame}
-	}
 
     % This slide has code block with syntax highlighting using the Minted package
     %  Minted requires Pygments and building the PDF with the --shell-escape argument
