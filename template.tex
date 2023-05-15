@@ -25,22 +25,22 @@
 % Uncomment this to define a presentation date distinct from \today
 % \def\mydate{20 Feb 2000}
 
+%Title
 
 \usebackgroundtemplate{   
 \includegraphics[width=\paperwidth,height=\paperheight]{logos/footer.png}
 }
+\setbeamertemplate{navigation symbols}{}
 \begin{document}
 
 {
 \setbeamertemplate{footline}{}
 \setbeamertemplate{headline}{}
 \usebackgroundtemplate{\includegraphics[height=\paperheight,width=\paperwidth]{logos/lisa_background.jpg}}
-\begin{frame}[plain]
+\begin{frame}[plain,noframenumbering]
   \titlepage
 \end{frame}
 }
-
-%    \setcounter{framenumber}{0}
 
     %%%%%%%%%%%%%%%%%%%%%%%
     %  Table of contents  %
@@ -138,6 +138,10 @@
         \framesubtitle{A bit more information about this}
         %More content goes here
     }
+
+    \frame{
+	\frametitle{This is a slide}
+}
 
     \section{}
     \lisaSplashWhite
