@@ -58,18 +58,28 @@
 }
 
 % Footline
-\setbeamerfont{footline}{size=\tiny}
-\setbeamertemplate{footline}{
-		\begin{columns}
-			\column{.55\textwidth}
-			\vspace{6px}
-		    	\centering {\color{white} LISA Conference \today}
-			\column{.38\textwidth}
-			\column{.08\textwidth}
-			\vspace{5px}
-			\color{white}\insertframenumber/\inserttotalframenumber
-		\end{columns}
-}
+% Redefine the footline template to include a minipage for customization                                                                                      
+\setbeamertemplate{footline}{%
+  \begin{minipage}[c]{\textwidth}                                                                                                                             
+    % Add your footer content here
+\vspace{15px}       
+    \begin{columns} 
+    \column{.55\textwidth}                                                                                                                                    
+    \vspace{6px}                                                                                                                                              
+    \centering {\color{white} Atomic Theory Seminar \mydate}                                                                                                  
+    \column{.38\textwidth}
+    \column{.08\textwidth}
+    \vspace{5px}
+    \color{white}\insertframenumber/\inserttotalframenumber                                                                                                   
+    \end{columns}                                                                                                                                             
+  \end{minipage}%
+}   
+                                                                                                                                                              
+% Set the frame footer to use the same content as the footline                                                                                                
+\setbeamertemplate{frame footer}{\usebeamertemplate*{footline}}                                                                                               
+    
+% Adjust the text area height on each frame                                                                                                                   
+\setlength{\textheight}{0.91\textheight} % Adjust this value as needed  
 
 
 \newcommand{\talkdate}{
